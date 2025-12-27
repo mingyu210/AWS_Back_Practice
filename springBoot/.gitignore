@@ -1,0 +1,136 @@
+####################################
+# OS
+####################################
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+*.stackdump
+
+####################################
+# Java / JVM
+####################################
+*.class
+*.log
+hs_err_pid*
+replay_pid*
+
+####################################
+# Gradle
+####################################
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/**/build/
+
+####################################
+# Maven
+####################################
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+####################################
+# IntelliJ IDEA
+####################################
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# IntelliJ specific
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf
+.idea/**/dataSources*
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+.idea/**/dbnavigator.xml
+.idea/**/gradle.xml
+.idea/**/libraries
+.idea/**/modules.xml
+.idea/**/compiler.xml
+.idea/**/jarRepositories.xml
+.idea/**/sonarlint/
+.idea/**/aws.xml
+
+####################################
+# VS Code
+####################################
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+####################################
+# Eclipse / STS
+####################################
+.project
+.classpath
+.settings/
+.factorypath
+.springBeans
+.sts4-cache/
+.apt_generated
+bin/
+
+####################################
+# NetBeans
+####################################
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+####################################
+# Node / NPM (혹시 나중에 같이 쓸 경우)
+####################################
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+####################################
+# 기타
+####################################
+*.swp
+*.tmp
+*.bak
+*.orig
+*.cache
+
+####################################
+# Environment files
+####################################
+.env
+.env.*
+
+####################################
+# Spring Boot config (secrets)
+####################################
+application.yml
+application-*.yml
+
