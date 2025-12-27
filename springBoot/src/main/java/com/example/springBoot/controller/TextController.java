@@ -1,5 +1,7 @@
 package com.example.springBoot.controller;
 
+import com.example.springBoot.dto.TextRequest;
+import com.example.springBoot.dto.TextResponse;
 import com.example.springBoot.entity.TextEntity;
 import com.example.springBoot.repository.TextRepository;
 import org.springframework.web.bind.annotation.*;
@@ -16,14 +18,17 @@ public class TextController {
     }
 
     // 입력 저장
-    @PostMapping("/in")
-    public TextEntity saveText(@RequestBody String content) {
-        return textRepository.save(new TextEntity(content));
+    @PostMapping(value = "/in", consumes = "application/json")
+    public TextEntity saveText(@RequestBody TextRequest dto) {
+        return textRepository.save(new TextEntity(dto.getContent()));
     }
 
     // 전체 조회
     @GetMapping("/out")
-    public List<TextEntity> getTexts() {
-        return textRepository.findAll();
+    public List<TextResponse> getTexts() {
+        return textRepository.findAll()
+                .stream()
+                .map(text -> new TextResponse(text.getId(), text.getContent()))
+                .toList();
     }
 }
