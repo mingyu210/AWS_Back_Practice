@@ -1,0 +1,43 @@
+version: "3.8"
+services:
+  app:
+    image: ${ECR_REGISTRY}/mingyu-server:latest
+    container_name: spring-app
+    restart: always
+    expose:
+      - "8080"
+    depends_on:
+      - redis
+    networks:
+      - backend
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
+    networks:
+      - backend
+
+  redis:
+    image: redis:7-alpine
+    container_name: redis
+    restart: always
+    expose:
+      - "6379"
+    networks:
+      - backend
+    command: redis-server --appendonly yes
+    volumes:
+      - redis-data:/data
+
+volumes:
+  redis-data:
+
+networks:
+  backend:
